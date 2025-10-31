@@ -1,0 +1,10 @@
+CREATE INDEX idx_history_member_dates ON member_membership_history(member_id, start_date DESC);
+CREATE UNIQUE INDEX idx_rooms_room_name ON rooms(room_name);
+CREATE UNIQUE INDEX idx_classes_name ON classes(class_name);
+CREATE INDEX idx_schedules_class_day_time ON schedules(class_id, day_of_week, start_time);
+CREATE INDEX idx_schedules_staff_day_time ON schedules(staff_id, day_of_week, start_time);
+CREATE INDEX idx_schedules_room_day_time ON schedules(room_id, day_of_week, start_time);
+CREATE UNIQUE INDEX idx_enrollments_member_schedule_unique ON class_enrollments(member_id, schedule_id);
+CREATE INDEX idx_enrollments_schedule_status ON class_enrollments(schedule_id, status);
+CREATE INDEX idx_attendance_member_arrival ON attendance(member_id, arrival_datetime DESC);
+CREATE INDEX idx_transactions_member_date ON transactions(member_id, transaction_date DESC);
