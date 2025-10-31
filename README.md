@@ -4,7 +4,7 @@ This repository contains a relational database project I designed and built usin
 
 | Component | Description | Key Topics |
 |------------|--------------|-------------|
-| **Database Design** | Created an ERD and normalized tables to handle members, staff, classes, memberships, and transactions. | relational modeling, normalization |
-| **Analytical Views** | Built views for class utilization, monthly revenue, and active memberships. | joins, grouping, aggregation |
-| **Triggers** | Implemented triggers to prevent class overbooking and auto-close old memberships. | business rules, data integrity |
+| **Database Design** | Created an ERD and normalized tables to handle 10 different tables, including members, staff, classes, memberships, and transactions. | relational modeling, normalization |
+| **Analytical Views** | Built 4 views that included class utilization, monthly revenue, active memberships, and gym activity last 30 days. | joins, grouping, aggregation |
+| **Triggers** | Implemented triggers that prevented class overbooking and auto-closed inactive memberships. | business rules, data integrity |
 | **Seed Data & Queries** | Added sample data and queries for realistic analytics and reporting. | SQL scripting, testing |
