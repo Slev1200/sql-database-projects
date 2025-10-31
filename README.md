@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Gym Management Database (SQLite)
+# 🏋️‍♂️ Gym Management Database System
 
 This repository contains a relational database project I designed and built using **SQLite** to model and manage the various operations within a gym.
 
