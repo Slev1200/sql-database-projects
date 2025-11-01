@@ -1,5 +1,5 @@
 -- Closes a previous membership when that same member signs up for a new membership
-CREATE TRIGGER IF NOT EXISTS close_previous_membership BEFORE INSERT ON member_membership_history FOR EACH ROW BEGIN UPDATE member_membership_history SET end_date = DATE('now') WHERE member_id = NEW.member_id AND (end_date IS NULL OR end_date > DATE('now')); 
+CREATE TRIGGER IF NOT EXISTS close_previous_membership BEFORE INSERT ON member_membership_history FOR EACH ROW BEGIN UPDATE member_membership_history SET end_date = DATE(NEW.start_date, '-1 day') WHERE member_id = NEW.member_id AND (end_date IS NULL OR end_date > NEW.start_date); 
 END;
 
 -- Prevents overbooking if class is already fully enrolled

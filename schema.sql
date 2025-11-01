@@ -27,8 +27,7 @@ CREATE TABLE member_membership_history (
     member_id       INTEGER NOT NULL,
     membership_id   INTEGER NOT NULL,
     start_date      DATE NOT NULL,
-    end_date        DATE, -- NULL means still active
-    CHECK (end_date IS NULL OR end_date >= start_date),
+    end_date        DATE CHECK (end_date IS NULL OR end_date >= start_date),
     
     FOREIGN KEY (member_id) REFERENCES members(member_id) ON DELETE CASCADE,
     
