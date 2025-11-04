@@ -1,0 +1,1 @@
+SELECT * FROM memberships LIMIT :num_rows;

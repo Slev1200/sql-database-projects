@@ -1,0 +1,1 @@
+SELECT room_name FROM rooms WHERE room_id = :room_id;

@@ -1,0 +1,1 @@
+SELECT * FROM active_memberships WHERE first_name = :fn AND last_name = :ln;

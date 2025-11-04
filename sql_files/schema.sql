@@ -27,8 +27,7 @@ CREATE TABLE member_membership_history (
     member_id       INTEGER NOT NULL,
     membership_id   INTEGER NOT NULL,
     start_date      DATE NOT NULL,
-    end_date        DATE, -- NULL means still active
-    CHECK (end_date IS NULL OR end_date >= start_date),
+    end_date        DATE CHECK (end_date IS NULL OR end_date >= start_date),
     
     FOREIGN KEY (member_id) REFERENCES members(member_id) ON DELETE CASCADE,
     
@@ -97,8 +96,7 @@ CREATE TABLE attendance (
     attendance_id        INTEGER PRIMARY KEY,
     member_id            INTEGER NOT NULL,
     arrival_datetime     NUMERIC NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- 'YYYY-MM-DD HH:MM:SS'
-    departure_datetime   NUMERIC NOT NULL DEFAULT CURRENT_TIMESTAMP,           -- NULL if not recorded yet
-    CHECK (departure_datetime IS NULL OR departure_datetime >= arrival_datetime),
+    departure_datetime   NUMERIC NOT NULL DEFAULT CURRENT_TIMESTAMP CHECK (departure_datetime >= arrival_datetime),
     
     FOREIGN KEY (member_id) REFERENCES members(member_id) ON DELETE CASCADE
 );

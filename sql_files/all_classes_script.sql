@@ -1,0 +1,1 @@
+SELECT * FROM class_schedule LIMIT :num_rows;

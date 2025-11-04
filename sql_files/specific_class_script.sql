@@ -1,0 +1,1 @@
+SELECT * FROM class_schedule WHERE class_name = :cn;

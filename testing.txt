@@ -1,0 +1,9 @@
+member_id 2: ('Liam', 'Johnson', '1988-09-22', 'M', 'liam.j@example.com', '6175551002', '77 Main St, Cambridge, MA', 'Cash'),
+
+membership 1 taken from member_membership_history
+
+memberships (membership_type, duration_days, price)
+            ('Basic Monthly',      30,       $39.99)
+
+member_membership_history (member_id, membership_id, start_date, end_date)
+                              (2,           1,      '2025-01-10',  NULL)

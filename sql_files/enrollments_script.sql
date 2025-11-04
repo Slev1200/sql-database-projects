@@ -1,0 +1,1 @@
+SELECT * FROM class_registrations WHERE first_name = :fn AND last_name = :ln;
