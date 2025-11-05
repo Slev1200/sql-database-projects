@@ -10,7 +10,7 @@ CREATE TABLE members (
     address        TEXT,
     join_date      DATE NOT NULL DEFAULT (DATE('now')),
     status         TEXT NOT NULL DEFAULT 'active' CHECK (status IN ('active', 'frozen', 'cancelled')),
-    current_payment_type   TEXT NOT NULL CHECK (current_payment_type IN ('Cash', 'Card', 'Bank'))
+    current_payment_type   TEXT NOT NULL DEFAULT 'Card' CHECK (current_payment_type IN ('Cash', 'Card', 'Bank'))
 );
 
 DROP TABLE IF EXISTS memberships;
