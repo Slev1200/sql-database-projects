@@ -37,9 +37,16 @@ GOTO :EOF
 
 :BadInputView
 ECHO Error: Invalid name. Please provide first and last name as strings.
-ECHO Example: %~nx0 Samuel Lenin
+ECHO Example: %~nx0 Liam Johnson
 EXIT /B 1
 
+REM =================================================
+REM REGISTER MODE (/r)
+REM Usage:
+REM   member.bat /r FirstName LastName DOB Gender Email Phone "Address"
+REM Example:
+REM   member.bat /r Liam Johnson 1988-09-22 M liam.j@example.com 6175551002 "77 Main St, Cambridge, MA"
+REM =================================================
 :REGISTER
 REM expects: FirstName LastName DOB Gender Email Phone "Address" Payment
 IF "%~8"=="" (
@@ -84,10 +91,9 @@ EXIT /B 1
 REM =================================================
 REM CANCEL MODE (/cancel)
 REM Usage:
-REM   member.bat /cancel FirstName LastName "Class Name" DayOfWeek StartTime
+REM   member.bat /cancel FirstName LastName DOB
 REM Example:
-REM   member.bat /cancel Liam Johnson HIIT Wednesday 07:00
-REM   member.bat /cancel Liam Johnson "Yoga Basics" Wednesday 07:00
+REM   member.bat /cancel Liam Johnson 1988-09-22
 REM Action:
 REM   Updates member status to show cancelled
 REM =================================================
@@ -115,12 +121,6 @@ REM Validate names
 ECHO %~2 | FINDSTR /R "[A-Za-z]" >NUL || GOTO :BadInputCancel
 ECHO %~3 | FINDSTR /R "[A-Za-z]" >NUL || GOTO :BadInputCancel
 
-@REM IF "%~2"=="" (
-@REM   ECHO Error: Missing arguments for /cancel.
-@REM   ECHO Usage: %~nx0 /cancel FirstName LastName [DOB]
-@REM   EXIT /B 1
-@REM )
-
 SET "FIRST_NAME=%~2"
 SET "LAST_NAME=%~3"
 SET "DATE_OF_BIRTH=%~4"
@@ -138,7 +138,7 @@ GOTO :EOF
 
 :BadInputCancel
 ECHO Error: Invalid name in /cancel.
-ECHO Usage: %~nx0 /cancel FirstName LastName "Class Name" DayOfWeek StartTime
+ECHO Usage: %~nx0 /cancel FirstName LastName DOB
 EXIT /B 1
 
 
@@ -154,7 +154,7 @@ ECHO Deactivate member info from the gym:
 ECHO   %~nx0 /cancel FirstName LastName DOB
 ECHO.
 ECHO Example:
-ECHO   %~nx0 /cancel Nora Rivera 1983-03-15
+ECHO   %~nx0 /cancel Liam Johnson 1988-09-22
 ECHO.
 EXIT /B 0
 
@@ -164,7 +164,7 @@ REM REACTIVATION MODE (/reactivate)
 REM Usage:
 REM   member.bat /reactivate FirstName LastName DOB
 REM Example:
-REM   member.bat /reactivate Liam Johnson 2000-01-01
+REM   member.bat /reactivate Liam Johnson 1988-09-22
 
 REM =================================================
 :REACTIVATE
@@ -191,11 +191,6 @@ REM Validate names
 ECHO %~2 | FINDSTR /R "[A-Za-z]" >NUL || GOTO :BadInputCancel
 ECHO %~3 | FINDSTR /R "[A-Za-z]" >NUL || GOTO :BadInputCancel
 
-@REM IF "%~2"=="" (
-@REM   ECHO Error: Missing arguments for /cancel.
-@REM   ECHO Usage: %~nx0 /cancel FirstName LastName [DOB]
-@REM   EXIT /B 1
-@REM )
 
 SET "FIRST_NAME=%~2"
 SET "LAST_NAME=%~3"
@@ -230,11 +225,11 @@ ECHO Deactivating member from the gym:
 ECHO   %~nx0 /cancel FirstName LastName DOB
 ECHO.
 ECHO Example:
-ECHO   %~nx0 /cancel Liam Johnson 2000-01-01
+ECHO   %~nx0 /cancel Liam Johnson 1988-09-22
 ECHO.
 ECHO Reactivating member to the gym:
 ECHO   %~nx0 /reactivate FirstName LastName DOB
 ECHO.
 ECHO Example:
-ECHO   %~nx0 /reactivate Liam Johnson 2000-01-01
+ECHO   %~nx0 /reactivate Liam Johnson 1988-09-22
 EXIT /B 0

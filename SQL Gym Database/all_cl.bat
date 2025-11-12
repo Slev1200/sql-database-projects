@@ -28,8 +28,6 @@ FOR /F "delims=0123456789" %%A IN ("%ARG%") DO (
 IF ERRORLEVEL 1 GOTO :BadInput
 
 REM --- Main script logic ---
-REM sqlite3 gym.db ".param set :num_rows %1" ".read sql_files/all_classes_script.sql"
-
 sqlite3 gym.db ".headers on" ".mode box" ".param set :num_rows %1" ".read sql_files/all_classes_script.sql"
 
 GOTO :EOF
@@ -39,7 +37,6 @@ GOTO :EOF
 ECHO Error: Invalid input detected. Argument must be a number.
 ECHO Example: %~nx0 10
 EXIT /B 1
-
 
 :HELP
 ECHO.

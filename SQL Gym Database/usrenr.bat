@@ -123,7 +123,7 @@ REM Example:
 REM   usrenr.bat /cancel Liam Johnson HIIT Wednesday 07:00
 REM   usrenr.bat /cancel Liam Johnson "Yoga Basics" Wednesday 07:00
 REM Action:
-REM   DELETE FROM register_request WHERE ...;
+REM   DELETE FROM class_registrations WHERE ...;
 REM =================================================
 :CANCEL
 

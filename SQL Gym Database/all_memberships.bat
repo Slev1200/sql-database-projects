@@ -28,12 +28,9 @@ FOR /F "delims=0123456789" %%A IN ("%ARG%") DO (
 IF ERRORLEVEL 1 GOTO :BadInput
 
 REM --- Main script logic ---
-REM sqlite3 gym.db ".param set :num_rows %1" ".read sql_files/all_classes_script.sql"
-
 sqlite3 gym.db ".headers on" ".mode box" ".param set :num_rows %1" ".read sql_files/all_memberships.sql"
 
 GOTO :EOF
-
 
 :BadInput
 ECHO Error: Invalid input detected. Argument must be a number.
@@ -47,7 +44,7 @@ ECHO Usage: %~nx0 num_rows
 ECHO Example: %~nx0 10
 ECHO.
 ECHO Description:
-ECHO   This batch file lists the top N classes from the database.
+ECHO   This batch file lists the top N memberships from the database.
 ECHO   You must provide exactly one numeric argument.
 ECHO.
 EXIT /B 0

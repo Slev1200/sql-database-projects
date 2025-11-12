@@ -33,14 +33,14 @@ GOTO :EOF
 
 :BadInput
 ECHO Error: Invalid input detected. Both first and last name must be strings.
-ECHO Example: %~nx0 John Lennon
+ECHO Example: %~nx0 Liam Johnson
 EXIT /B 1
 
 
 :HELP
 ECHO.
 ECHO Usage: %~nx0 first_name last_name
-ECHO Example: %~nx0 John Lennon
+ECHO Example: %~nx0 Liam Johnson
 ECHO.
 ECHO Description:
 ECHO   This batch file queries all payments for the specified member.
