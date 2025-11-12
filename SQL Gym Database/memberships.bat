@@ -21,7 +21,7 @@ GOTO :VIEW
 REM =================================================
 REM VIEW MODE
 REM Usage:
-REM   usrenr.bat FirstName LastName
+REM   memberships.bat FirstName LastName
 REM Description:
 REM   Shows what classes this member is enrolled in
 REM   using enrollments_script.sql
@@ -59,21 +59,16 @@ EXIT /B 1
 REM =================================================
 REM REGISTER MODE (/r)
 REM Usage:
-REM   usrenr.bat /r FirstName LastName "Class Name" DayOfWeek StartTime
+REM   memberships.bat /r member_id membership_id
 REM Example:
-REM   usrenr.bat /r Emma Rodriguez "Yoga Basics" Wednesday 07:00
-REM Action:
-REM   INSERT INTO register_request (... status='enrolled')
+REM   memberships.bat /r 2 10
 REM =================================================
 :REGISTER
 
-REM Need exactly 6 args total:
+REM Need exactly 3 args total:
 REM   %1 = /r
-REM   %2 = FirstName
-REM   %3 = LastName
-REM   %4 = ClassName (quote if spaced)
-REM   %5 = DayOfWeek
-REM   %6 = StartTime
+REM   %2 = member_id
+REM   %3 = membership_id
 
 REM Args: /r member_id membership_id
 IF "%~3"=="" (
@@ -137,12 +132,7 @@ ECHO.
 ECHO Register for a class:
 ECHO   %~nx0 /r member_id membership_id
 ECHO Example:
-ECHO   %~nx0 /r 1 10
-ECHO.
-ECHO Cancel a registration:
-ECHO   %~nx0 /cancel FirstName LastName "Class Name" DayOfWeek StartTime
-ECHO Example:
-ECHO   %~nx0 /cancel Liam Johnson HIIT Wednesday 07:00
+ECHO   %~nx0 /r 2 10
 ECHO.
 EXIT /B 0
 
