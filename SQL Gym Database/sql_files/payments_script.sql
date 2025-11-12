@@ -1,1 +1,1 @@
-SELECT * FROM most_recent_payments WHERE first_name = :fn OR last_name = :ln;
+SELECT * FROM most_recent_payments WHERE first_name = :fn AND last_name = :ln;

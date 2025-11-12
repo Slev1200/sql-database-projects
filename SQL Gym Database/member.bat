@@ -84,12 +84,12 @@ EXIT /B 1
 REM =================================================
 REM CANCEL MODE (/cancel)
 REM Usage:
-REM   usrenr.bat /cancel FirstName LastName "Class Name" DayOfWeek StartTime
+REM   member.bat /cancel FirstName LastName "Class Name" DayOfWeek StartTime
 REM Example:
-REM   usrenr.bat /cancel Liam Johnson HIIT Wednesday 07:00
-REM   usrenr.bat /cancel Liam Johnson "Yoga Basics" Wednesday 07:00
+REM   member.bat /cancel Liam Johnson HIIT Wednesday 07:00
+REM   member.bat /cancel Liam Johnson "Yoga Basics" Wednesday 07:00
 REM Action:
-REM   DELETE FROM register_request WHERE ...;
+REM   Updates member status to show cancelled
 REM =================================================
 :CANCEL
 
@@ -162,9 +162,9 @@ EXIT /B 0
 REM =================================================
 REM REACTIVATION MODE (/reactivate)
 REM Usage:
-REM   usrenr.bat /reactivate FirstName LastName DOB
+REM   member.bat /reactivate FirstName LastName DOB
 REM Example:
-REM   usrenr.bat /reactivate Liam Johnson 2000-01-01
+REM   member.bat /reactivate Liam Johnson 2000-01-01
 
 REM =================================================
 :REACTIVATE

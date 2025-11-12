@@ -84,16 +84,16 @@ BEGIN
     DELETE FROM class_enrollments
     WHERE EXISTS (
         SELECT 1
-        FROM members   AS m
-        JOIN classes   AS c
+        FROM members AS m
+        JOIN classes AS c
           ON c.class_name = OLD.class_name
         JOIN schedules AS s
-          ON s.class_id    = c.class_id
+          ON s.class_id = c.class_id
          AND s.day_of_week = OLD.day_of_week
-         AND s.start_time  = OLD.start_time
-        WHERE m.member_id        = class_enrollments.member_id
-          AND s.schedule_id      = class_enrollments.schedule_id
-          AND m.first_name       = OLD.first_name
-          AND m.last_name        = OLD.last_name
+         AND s.start_time = OLD.start_time
+        WHERE m.member_id = class_enrollments.member_id
+          AND s.schedule_id = class_enrollments.schedule_id
+          AND m.first_name = OLD.first_name
+          AND m.last_name = OLD.last_name
     );
 END;
