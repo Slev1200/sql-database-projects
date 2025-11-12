@@ -11,6 +11,5 @@ GOTO :EOF
 :HELP
 ECHO.
 ECHO Usage: pass one arguments: num_members e.g. all_mem.bat 5
-ECHO
 ECHO.
 GOTO :EOF
