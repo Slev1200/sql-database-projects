@@ -12,11 +12,6 @@ GOTO :EOF
 ECHO.
 ECHO Usage: pass one arguments: room_id e.g. room.bat 17
 ECHO.
-ECHO Options:
-ECHO   /?         Display this help message.
-ECHO   /h         Display this help message.
-ECHO   --help     Display this help message.
-ECHO.
 ECHO Description:
 ECHO   This batch file lists the room that the class you registered for is happening in.
 ECHO.

@@ -11,17 +11,6 @@ GOTO :EOF
 :HELP
 ECHO.
 ECHO Usage: pass one arguments: num_members e.g. all_mem.bat 5
+ECHO
 ECHO.
-ECHO Options:
-ECHO   /?         Display this help message.
-ECHO   /h         Display this help message.
-ECHO   --help     Display this help message.
-ECHO.
-ECHO Description:
-ECHO   This batch file provides a list of members in the club.
-ECHO.
-ECHO Helpful Info:
-ECHO   /?         Display this help message.
-ECHO   /h         Display this help message.
-ECHO   --help     Display this help message.
 GOTO :EOF
