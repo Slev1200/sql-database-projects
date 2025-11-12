@@ -24,7 +24,7 @@ REM Usage:
 REM   memberships.bat FirstName LastName
 REM Description:
 REM   Shows what classes this member is enrolled in
-REM   using enrollments_script.sql
+REM   using memberships_script.sql
 REM =================================================
 :VIEW
 
@@ -45,14 +45,14 @@ REM Basic sanity: must contain at least one letter
 ECHO %~1 | FINDSTR /R "[A-Za-z]" >NUL || GOTO :BadInputView
 ECHO %~2 | FINDSTR /R "[A-Za-z]" >NUL || GOTO :BadInputView
 
-REM Run SELECT script for enrollments
+REM Run SELECT script for memberships
 sqlite3 gym.db ".headers on" ".mode box" ".param set :fn '%1'"  ".param set :ln '%2'" ".read sql_files/memberships_script.sql"
 
 GOTO :EOF
 
 :BadInputView
 ECHO Error: Invalid name. Please provide first and last name as strings.
-ECHO Example: %~nx0 Samuel Lenin
+ECHO Example: %~nx0 Liam Johnson
 EXIT /B 1
 
 
